@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Stock Market Basics | Priyam</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Priyam</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-header fade-in">
+                <span class="blog-date"><i class="far fa-calendar"></i> Oct 30, 2025 • 6 min read</span>
+                <h1 class="blog-title">Understanding Stock Market Basics</h1>
+                <img src="https://placehold.co/1200x600/1a1a1a/b026ff?text=Stock+Market+101" alt="Stock Market"
+                    class="blog-hero-img">
+            </div>
+
+            <div class="blog-body fade-in" style="animation-delay: 0.2s;">
+                <p>Investing in the stock market is one of the most effective ways to build wealth over time. However,
+                    for beginners, the charts, tickers, and terminology can be intimidating. Let's demystify the basics
+                    and get you comfortable with the language of Wall Street.</p>
+
+                <h2>What is a Stock?</h2>
+                <p>A stock represents a share in the ownership of a company. When you buy a stock, you become a
+                    shareholder. If the company does well, the value of your stock goes up. If it pays dividends, you
+                    get a share of the profits.</p>
+
+                <h2>Bull vs. Bear Markets</h2>
+                <p>You'll often hear these animal terms thrown around:</p>
+                <ul>
+                    <li><strong>Bull Market:</strong> A market that is on the rise and where the economy is sound.
+                        Optimism is high.</li>
+                    <li><strong>Bear Market:</strong> A market that recedes, where stocks are declining in value.
+                        Pessimism is high.</li>
+                </ul>
+
+                <h2>Key Metrics to Watch</h2>
+                <p>Before buying a stock, you should look at some fundamental metrics:</p>
+                <ul>
+                    <li><strong>P/E Ratio (Price-to-Earnings):</strong> Measures a company's current share price
+                        relative to its per-share earnings. A high P/E might mean a stock is overvalued, or that
+                        investors are expecting high growth.</li>
+                    <li><strong>Market Cap:</strong> The total value of a company's shares of stock. It gives you an
+                        idea of the company's size (Large-cap, Mid-cap, Small-cap).</li>
+                </ul>
+
+                <h2>The Golden Rule: Diversification</h2>
+                <p>"Don't put all your eggs in one basket." This is the most important rule in investing.
+                    Diversification means spreading your investments across different sectors and asset classes to
+                    reduce risk. If tech stocks crash, your healthcare or energy stocks might still be doing well,
+                    balancing your portfolio.</p>
+
+                <h2>Conclusion</h2>
+                <p>The stock market is a powerful tool for financial growth. By understanding the basics and adopting a
+                    long-term mindset, you can navigate the volatility and work towards your financial goals. Remember,
+                    time in the market beats timing the market.</p>
+            </div>
+
+            <div class="blog-footer fade-in" style="animation-delay: 0.4s;">
+                <a href="blogs.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        /* Inline styles for blog post specific elements */
+        .blog-post-section {
+            padding-top: 120px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            margin: 20px 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-date {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .blog-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        .blog-body h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .blog-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-body ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .blog-body li {
+            margin-bottom: 10px;
+        }
+
+        .blog-footer {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .blog-post-section {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Machine Learning | Priyam</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Priyam</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-header fade-in">
+                <span class="blog-date"><i class="far fa-calendar"></i> Nov 15, 2025 • 8 min read</span>
+                <h1 class="blog-title">Getting Started with Machine Learning</h1>
+                <img src="https://placehold.co/1200x600/1a1a1a/00d4ff?text=Machine+Learning+Basics"
+                    alt="Machine Learning" class="blog-hero-img">
+            </div>
+
+            <div class="blog-body fade-in" style="animation-delay: 0.2s;">
+                <p>Machine Learning (ML) is transforming industries, from healthcare to finance. But for a beginner, the
+                    jargon can be overwhelming. Neural networks, supervised learning, backpropagation—where do you even
+                    start? This guide breaks down the basics to help you take your first steps into the world of AI.</p>
+
+                <h2>What is Machine Learning?</h2>
+                <p>At its core, Machine Learning is about teaching computers to learn from data without being explicitly
+                    programmed for every specific rule. Instead of writing `if-else` statements for every scenario, we
+                    feed the algorithm data, and it learns patterns to make predictions or decisions.</p>
+
+                <h2>Key Concepts</h2>
+                <ul>
+                    <li><strong>Supervised Learning:</strong> The most common type. You train the model on labeled data
+                        (e.g., photos of cats and dogs labeled as "cat" or "dog"). The model learns to map inputs to
+                        outputs.</li>
+                    <li><strong>Unsupervised Learning:</strong> The data has no labels. The model tries to find
+                        structure or patterns on its own (e.g., grouping customers by purchasing behavior).</li>
+                    <li><strong>Neural Networks:</strong> Algorithms inspired by the human brain. They consist of layers
+                        of nodes (neurons) that process information. Deep Learning is simply ML using multi-layered
+                        neural networks.</li>
+                </ul>
+
+                <h2>Tools of the Trade</h2>
+                <p>Python is the undisputed king of ML. Here are the libraries you need to know:</p>
+                <ul>
+                    <li><strong>Scikit-learn:</strong> Great for traditional ML algorithms like regression and
+                        clustering.</li>
+                    <li><strong>TensorFlow & PyTorch:</strong> The heavyweights for Deep Learning and Neural Networks.
+                    </li>
+                    <li><strong>Pandas & NumPy:</strong> Essential for data manipulation and numerical analysis.</li>
+                </ul>
+
+                <h2>Your First Project</h2>
+                <p>Don't just read—code! A classic first project is the "Titanic Survival Prediction" on Kaggle. It
+                    challenges you to predict which passengers survived the Titanic shipwreck based on data like age,
+                    sex, and ticket class. It covers data cleaning, feature engineering, and model training.</p>
+
+                <h2>Conclusion</h2>
+                <p>The journey into Machine Learning is a marathon, not a sprint. Start with the fundamentals, build
+                    small projects, and gradually tackle more complex problems. The future is intelligent, and you can
+                    be part of building it.</p>
+            </div>
+
+            <div class="blog-footer fade-in" style="animation-delay: 0.4s;">
+                <a href="blogs.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        /* Inline styles for blog post specific elements */
+        .blog-post-section {
+            padding-top: 120px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            margin: 20px 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-date {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .blog-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        .blog-body h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .blog-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-body ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .blog-body li {
+            margin-bottom: 10px;
+        }
+
+        .blog-footer {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .blog-post-section {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</body>
+
+</html>

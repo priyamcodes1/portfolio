@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Priyam</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <span class="toast-icon">✔</span>
+        <span id="toast-text">Message sent!</span>
+    </div>
+
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Priyam</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link">Blogs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Let's Connect</h3>
+                    <p>You can reach out to me if you want to say hi or whether ask any questions, feel free to reach
+                        out!</p>
+
+                    <div class="social-links">
+                        <a href="https://discordapp.com/users/957195558613811230" class="social-icon" target="_blank"><i
+                                class="fab fa-discord"></i></a>
+                        <a href="mailto:priyamdwivedi1605@gmail.com" class="social-icon"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="tel:+919391321252" class="social-icon"><i class="fas fa-mobile-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in" style="animation-delay: 0.2s;">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function () {
+            const form = document.getElementById("contactForm");
+            if (!form) return;
+
+            const FORMSPREE = 'https://formspree.io/f/mnnengrv';
+            const toast = document.getElementById("toast");
+            const toastText = document.getElementById("toast-text");
+            const btn = form.querySelector("button[type='submit']");
+
+            let hideTimeout = null;
+
+            function showToast(text, type = 'success', ms = 3000) {
+                if (!toast) {
+                    alert(text); // fallback
+                    return;
+                }
+                clearTimeout(hideTimeout);
+                toastText.textContent = text;
+                toast.classList.remove('error', 'show');
+                if (type === 'error') toast.classList.add('error');
+                // show
+                toast.classList.add('show');
+                // hide after delay
+                hideTimeout = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, ms);
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                if (!btn) return;
+
+                const prevText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = "Sending...";
+
+                const data = new FormData(form);
+
+                try {
+                    const res = await fetch(FORMSPREE, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' }, // avoid redirect / CORS issues
+                        body: data
+                    });
+
+                    if (res.ok) {
+                        showToast("Sent successfully! ✅", 'success', 3000);
+                        form.reset();
+                    } else {
+                        // try to get more detail but show generic error
+                        let body = '';
+                        try { body = await res.text(); } catch (_) { }
+                        console.error('Formspree error', res.status, body);
+                        showToast("Failed to send. Try again.", 'error', 3500);
+                    }
+                } catch (err) {
+                    console.error('Network error', err);
+                    showToast("Network error. Check your connection.", 'error', 3500);
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = prevText;
+                }
+            });
+        })();
+    </script>
+
+
+
+
+
+</body>
+
+</html>

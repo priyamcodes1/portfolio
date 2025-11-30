@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Animations | Priyam</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Priyam</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Me</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blogs.html" class="nav-link active">Blogs</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post-section">
+        <div class="container">
+            <div class="blog-header fade-in">
+                <span class="blog-date"><i class="far fa-calendar"></i> Oct 10, 2025 • 4 min read</span>
+                <h1 class="blog-title">Advanced CSS Animations</h1>
+                <img src="https://placehold.co/1200x600/1a1a1a/00d4ff?text=CSS+Animations" alt="CSS Animations"
+                    class="blog-hero-img">
+            </div>
+
+            <div class="blog-body fade-in" style="animation-delay: 0.2s;">
+                <p>Animations can breathe life into a static webpage. While JavaScript libraries like GSAP are powerful,
+                    modern CSS is capable of creating stunning, buttery-smooth animations with better performance. Let's
+                    explore how to push CSS keyframes and transitions to the limit.</p>
+
+                <h2>Why CSS over JavaScript?</h2>
+                <p>The browser's main thread handles JavaScript, layout, and painting. If your JS is heavy, animations
+                    can stutter. CSS animations, especially those using `transform` and `opacity`, can be offloaded to
+                    the GPU (compositor thread), ensuring smooth 60fps performance even when the main thread is busy.
+                </p>
+
+                <h2>Mastering Keyframes</h2>
+                <p>The `@keyframes` rule is the heart of CSS animation. You can define complex sequences by specifying
+                    styles at various percentages of the animation's duration.</p>
+                <pre
+                    style="background: #1a1a1a; padding: 15px; border-radius: 8px; overflow-x: auto; color: #e0e0e0; border: 1px solid rgba(255,255,255,0.1);">
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+                </pre>
+
+                <h2>Transition Timing Functions</h2>
+                <p>The default `ease` is fine, but `cubic-bezier` is where the magic happens. It allows you to define
+                    custom acceleration curves. You can create bouncy effects, elastic snaps, or slow-motion starts
+                    without a single line of JS.</p>
+
+                <h2>Performance Tips</h2>
+                <ul>
+                    <li><strong>Stick to Transform & Opacity:</strong> Avoid animating properties like `width`,
+                        `height`, `margin`, or `top/left`. These trigger layout recalculations (reflow), which are
+                        expensive.</li>
+                    <li><strong>Use `will-change`:</strong> This property hints to the browser that an element is about
+                        to change, allowing it to optimize ahead of time. Use sparingly!</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>CSS animations are a powerful tool in a frontend developer's arsenal. By understanding the rendering
+                    pipeline and mastering keyframes, you can create immersive web experiences that delight users
+                    without sacrificing performance.</p>
+            </div>
+
+            <div class="blog-footer fade-in" style="animation-delay: 0.4s;">
+                <a href="blogs.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priyam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        /* Inline styles for blog post specific elements */
+        .blog-post-section {
+            padding-top: 120px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            margin: 20px 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-date {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .blog-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        .blog-body h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .blog-body p {
+            margin-bottom: 20px;
+        }
+
+        .blog-body ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .blog-body li {
+            margin-bottom: 10px;
+        }
+
+        .blog-footer {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .blog-post-section {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</body>
+
+</html>
