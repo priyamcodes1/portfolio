@@ -1377,6 +1377,7 @@ header,
         animation: none !important;
     }
 }
+
 /* =================================================================
    MOBILE NAVBAR AND HERO FIXES (Override previous media queries)
    ================================================================= */
@@ -1400,9 +1401,9 @@ header,
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
-                    opacity 0.4s ease, 
-                    visibility 0.4s ease;
+        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.4s ease,
+            visibility 0.4s ease;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.7);
         pointer-events: none;
         visibility: hidden;
@@ -1434,12 +1435,12 @@ header,
         overflow-x: hidden;
         position: relative;
     }
-    
+
     /* Ensure no horizontal scroll at all */
     html {
         overflow-x: hidden;
     }
-    
+
     /* Update hero section to fit perfectly */
     .hero {
         min-height: calc(100vh - var(--nav-height)) !important;
@@ -1448,9 +1449,38 @@ header,
         padding-bottom: 0 !important;
         margin-bottom: 0 !important;
     }
-    
+
     /* Ensure footer comes right after hero */
     footer {
         margin-top: 0 !important;
+    }
+}
+/* Hamburger Animation Fix */
+.hamburger .bar {
+    transition: all 0.3s ease !important;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px) !important;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px) !important;
+}
+
+/* Navbar Animation Fix */
+@media (max-width: 768px) {
+    .nav-links {
+        right: 0 !important;
+        transform: translateX(100%) !important;
+        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0) !important;
+    }
+
+    .nav-links.active {
+        transform: translateX(0) !important;
     }
 }
